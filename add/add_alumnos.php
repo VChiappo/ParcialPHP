@@ -17,14 +17,15 @@ if (!empty($name) && isset($_FILES['image']) && $_FILES['image']['error'] === UP
         if (in_array($imageFileType, ['jpg', 'jpeg', 'png', 'gif'])) {
             // Mover el archivo subido al directorio de destino
             if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
-                $flag = $uploadFile;
+                $image = $uploadFile;
 
                 // Insertar en la base de datos
-                $query = "INSERT INTO alumnos (name, active, image) VALUES (:name, :active, :image)";
+                $query = "INSERT INTO alumnos (name, image, active) VALUES (:name, :image, :active)";
                 $statement = $connect->prepare($query);
                 $statement->bindParam(':name', $name, PDO::PARAM_STR);
-                $statement->bindParam(':active', $active, PDO::PARAM_INT);
                 $statement->bindParam(':image', $image, PDO::PARAM_STR);
+                $statement->bindParam(':active', $active, PDO::PARAM_INT);
+                
 
                 if ($statement->execute()) {
                     $response = array('status_code' => 200, 'message' => 'Alumno added successfully', 'id' => $connect->lastInsertId());

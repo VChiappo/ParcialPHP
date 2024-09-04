@@ -1,6 +1,6 @@
 
-function deleteCountry(id) {
-    fetch('./delete/delete_country.php', {
+function deleteAlumno(id) {
+    fetch('./delete/delete_alumno.php', {
       method: 'POST',
       body: new URLSearchParams({ id: id })
     })

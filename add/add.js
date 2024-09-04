@@ -22,7 +22,7 @@ function addAlumnos() {
 
                 getAlumnos()
                 document.getElementById('add_name').value = "";
-                document.getElementById('add_image').value = null;
+                document.getElementById('add_image').value = "";
                 document.getElementById('add_active').checked = false;
 
             } else {

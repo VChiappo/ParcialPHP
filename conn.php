@@ -5,7 +5,7 @@ $contraseña = '';
 
 try {
     $connect = new PDO($dsn, $usuario, $contraseña);
-    echo 'conectado';
+    //echo 'conectado';
 } catch (PDOException $e) {
     echo 'Falló la conexión: ' . $e->getMessage();
 }

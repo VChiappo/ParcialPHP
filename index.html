@@ -56,8 +56,6 @@
   </div>
 
   <script>
-    //document.addEventListener('DOMContentLoaded', function () {
-    
 
     function confirmDelete(id) {
       Swal.fire({
@@ -72,7 +70,7 @@
       }).then((result) => {
         if (result.isConfirmed) {
 
-          deleteCountry(id)
+          deleteAlumno(id)
 
         }
       })
@@ -209,7 +207,7 @@
 
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="add_active">
-              <label class="form-check-label" for="add-active">Activo</label>
+              <label class="form-check-label" for="add_active">Activo</label>
             </div>
 
           </form>
@@ -234,7 +232,7 @@
   <!-- Custom JS Files -->
   <script src="add/add.js"></script>
   <script src="update/update.js"></script>
-  <script src="delete/delete.js"></script>
+  <script src="delete/delete_alumno.js"></script>
   <script src="search/get_alumnos.js"></script>
   <script src="search/get_alumnos_by_id.js"></script>
 
